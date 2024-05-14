@@ -1674,10 +1674,19 @@ groups:
         example: ckan-errors@example.com
         description: This controls from which email the error messages will come from.
 
-
   - annotation: Background Job Settings
     options:
       - key: ckan.jobs.timeout
         type: int
         default: 180
         description: The option defines the timeout in seconds until giving up on a job
+
+  - annotation: PostHog
+    options:
+      - key: ckan.posthog.api_key
+        default: ""
+        description: The PostHog API KEY for HTML snippet
+
+      - key: ckan.posthog.api_host
+        default: ""
+        description: The host to push PostHog eventsn

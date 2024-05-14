@@ -2783,3 +2783,11 @@ def make_login_url(
 @core_helper
 def csrf_input():
     return snippet('snippets/csrf_input.html')
+
+@core_helper
+def get_posthog_key() -> str:
+    return config["ckan.posthog.api_key"]
+
+@core_helper
+def get_posthog_host() -> str:
+    return config["ckan.posthog.api_host"]

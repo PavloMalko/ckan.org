@@ -83,6 +83,20 @@
       </style>
       {%- endif %}
     {% endblock %}
+
+    {% block posthog %}
+    {# 
+      The block load PostHog initilise JS data-module.
+      Requered setup API key and API host in ckan config file:
+        ckan.posthog.api_key
+        ckan.posthog.api_host
+    #}
+    <div class="d-none"  
+      data-module="posthog" 
+      data-module-api-key={{ h.get_posthog_key() }}
+      data-module-api-host={{ h.get_posthog_host() }}
+    ></div>
+    {% endblock %}
   </head>
 
   {# Allows custom attributes to be added to the <body> tag #}
